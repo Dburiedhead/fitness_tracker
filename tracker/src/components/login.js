@@ -1,12 +1,11 @@
-import React, { Component, useState } from 'react';
-import { Row, Col, Form, Button, Container } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Col, Form, Button, Container } from 'react-bootstrap'
 
 class Login extends Component {
 
     state = {
         email: '',
         password: '',
-        validated: 'false'
     }
 
     handleChange = (e, { name, value }) => this.setState({ [name]: value });
@@ -19,7 +18,6 @@ class Login extends Component {
             e.stopPropagation();
         }
 
-        this.state.validated = 'true'
         const data = {
             email: this.state.email,
             password: this.state.password
@@ -32,11 +30,11 @@ class Login extends Component {
 
     render() {
 
-        const { email, password, validated } = this.state
+        const { email, password } = this.state
 
         return (
             <Container style={{ padding: '0 10vw' }}>
-                <Form noValidate validated={validated} onSubmit={this.handleSubmit} >
+                <Form noValidate onSubmit={this.handleSubmit} >
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Email</Form.Label>

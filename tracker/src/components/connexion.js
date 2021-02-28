@@ -9,8 +9,13 @@ class Connexion extends Component {
             <div>
                 <h1>Log in</h1>
                 <p>condition si login selectionné afficher formulaire login sinon signup</p>
-                <Login />
-                <p>Already have an account ? <Button href='./signup'>Please, sign up</Button></p>
+                <Row>
+                    <Login />
+
+                </Row>
+                <Row>
+                    <p>Already have an account ? <Button href='./signup'>Please, sign up</Button></p>
+                </Row>
             </div>
         )
     }
