@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import Connexion from './connexion';
 import { Row,Col, Jumbotron, Container } from 'react-bootstrap';
+import Login from './login';
 
 class Home extends Component {
     render() {
 
         return (
             <div>
-                <Jumbotron>
+                <Jumbotron style={{ height: '90vh', margin: '0' }}>
                     <Row>
                         <Col lg={7}>
                             <h1>Home page</h1>
                             <p>Some presentation text</p>
                         </Col>
                         <Col lg={5}>
-                            <Connexion />
+                            <Login />
                         </Col>
                     </Row>
                 </Jumbotron>
