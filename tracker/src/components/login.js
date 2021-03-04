@@ -1,57 +1,70 @@
 import React, { Component } from 'react';
 import { Col, Form, Button, Container } from 'react-bootstrap'
+import { Formik } from 'formik';
+import axios from 'axios';
 
-class Login extends Component {
+const api = axios.create({
+    baseURL: 'http://localhost:3001/api/v1/sessions'
+});
 
-    state = {
-        email: '',
-        password: '',
-    }
+function Login() {
 
-    handleChange = (e, { name, value }) => this.setState({ [name]: value });
+    return (
 
-
-    handleSubmit = (e) => {
-        const form = e.currentTarget;
-        if (form.checkValidity() === false) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-
-        const data = {
-            email: this.state.email,
-            password: this.state.password
-        };
-        /*api.post('/', data)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))*/
-        console.log(data)
-    };
-
-    render() {
-
-        const { email, password } = this.state
-
-        return (
-            <div>
-                <h2 style={{ marginBottom: '1em', textAlign: 'center' }}>Log in</h2>
-                <Form noValidate onSubmit={this.handleSubmit} >
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridEmail">
-                            <Form.Control value={ email } onChange={this.handleChange} type="email" placeholder="Enter email" />
-                        </Form.Group>
+        <Container style={{ padding: '5% 10%', background: 'rgb(255, 255, 255)' }}>
+            <h2 style={{ marginBottom: '1em', textAlign: 'center' }}>Log in</h2>
+            <Formik
+                onSubmit= { (values) =>
+                    // console.log(values),
+                    api.post('/', values)
+                    .then(values => console.log('new user submitted', values))
+                    .catch(err => console.log(err))
+                }
+                initialValues={{
+                    email: '',
+                    password: '',
+                }}
+            >
+                {({
+                    handleSubmit,
+                    handleChange,
+                    values,
+                }) => (
+                    <Form noValidate onSubmit={handleSubmit}>
+                        <Form.Row>
+                            <Col md={6}>
+                                <Form.Group controlId="validationFormik01">
+                                    <Form.Control
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={values.email}
+                                    onChange={handleChange}
+                                    />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            </Form.Group>
+                            </Col>
+                            <Col md={6}>
+                                <Form.Group controlId="validationFormik02">
+                                    <Form.Control
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    value={values.password}
+                                    onChange={handleChange}
+                                    />
+                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                </Form.Group>
+                            </Col>
                     </Form.Row>
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridPassword">
-                            <Form.Control value={ password } onChange={this.handleChange} type="password" placeholder="Password" />
-                        </Form.Group>
-                    </Form.Row>
-                    <Button variant="primary" type="submit" block>Submit</Button>
-                </Form>
-                <small>Already have an account ? <Button variant='link' size="sm" href='./signup' style={{ verticalAlign: 'unset' }}>Please, sign up</Button></small>
-            </div>
-        )
-    }
+                    <Button block type="submit">Submit form</Button>
+                  </Form>
+            )}
+        </Formik>
+        <small>Don't have an account ? <Button variant='link' size="sm" href='./signup' style={{ verticalAlign: 'unset' }}>Please, sign up</Button></small>
+      </Container>
+
+    );
 }
   
 export default Login;

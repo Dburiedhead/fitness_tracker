@@ -10,7 +10,7 @@ class GuestMenu extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>
-                            <Nav.Link href="./connexion">Log in / Sign up</Nav.Link>
+                            <Nav.Link href="./signup">Sign up</Nav.Link>
                             <Nav.Link href="./test">Test</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

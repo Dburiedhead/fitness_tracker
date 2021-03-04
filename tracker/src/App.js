@@ -5,14 +5,6 @@ import GuestMenu from './components/guest_menu';
 import UserMenu from './components/user_menu';
 import Main from './components/main';
 
-function User(props) {
-  return <UserMenu />;
-}
-
-function Guest(props) {
-  return <GuestMenu />;
-}
-
 function Menu(props) {
   const isLogged = props.isLogged;
   if (isLogged) {
@@ -24,7 +16,7 @@ function Menu(props) {
 function App() {
   return (
     <div className="App">
-      <Menu isLogged={true} />
+      <Menu isLogged={false} />
       <div className="content">
         <Main />
       </div>
