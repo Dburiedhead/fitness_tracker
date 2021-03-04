@@ -6,7 +6,6 @@ import Dashboard from './dashboard';
 import Home from './home';
 import Profile from './profile';
 import Test from './test';
-import Signup from './signup';
 
 const Main = () => (
     <BrowserRouter>
@@ -17,7 +16,6 @@ const Main = () => (
             <Route exact path ='/' component = { Home } />
             <Route path ='/profile' component = { Profile } />
             <Route path ='/test' component = { Test } />
-            <Route path ='/signup' component = { Signup } />
         </Switch>
     </BrowserRouter>
 )

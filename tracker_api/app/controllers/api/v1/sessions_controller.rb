@@ -1,13 +1,13 @@
 class Api::V1::SessionsController < ApplicationController
 
-    # GET /activities
+    # GET /users
     def index
         @user = User.all
 
         render json: @user
     end
 
-    # POST /sessions
+    # POST /users
     def create
 
     end

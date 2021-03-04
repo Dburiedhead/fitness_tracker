@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Connexion from './connexion';
-import { Jumbotron } from 'react-bootstrap';
+import { Row,Col, Jumbotron, Container } from 'react-bootstrap';
 
 class Home extends Component {
     render() {
@@ -8,8 +8,15 @@ class Home extends Component {
         return (
             <div>
                 <Jumbotron>
-                    <h1>Home page</h1>
-                    <Connexion />
+                    <Row>
+                        <Col lg={7}>
+                            <h1>Home page</h1>
+                            <p>Some presentation text</p>
+                        </Col>
+                        <Col lg={5}>
+                            <Connexion />
+                        </Col>
+                    </Row>
                 </Jumbotron>
             </div>
         )

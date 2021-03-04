@@ -33,26 +33,23 @@ class Login extends Component {
         const { email, password } = this.state
 
         return (
-            <Container style={{ padding: '0 10vw' }}>
+            <div>
+                <h2 style={{ marginBottom: '1em', textAlign: 'center' }}>Log in</h2>
                 <Form noValidate onSubmit={this.handleSubmit} >
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
-                            <Form.Label>Email</Form.Label>
                             <Form.Control value={ email } onChange={this.handleChange} type="email" placeholder="Enter email" />
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <Form.Label>Password</Form.Label>
                             <Form.Control value={ password } onChange={this.handleChange} type="password" placeholder="Password" />
                         </Form.Group>
                     </Form.Row>
-
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
+                    <Button variant="primary" type="submit" block>Submit</Button>
                 </Form>
-            </Container>
+                <small>Already have an account ? <Button variant='link' size="sm" href='./signup' style={{ verticalAlign: 'unset' }}>Please, sign up</Button></small>
+            </div>
         )
     }
 }
