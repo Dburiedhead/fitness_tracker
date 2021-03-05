@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3001/api/v1/sessions'
+    baseURL: 'http://localhost:3001/api/v1/registration'
 });
 
 function Signup() {
@@ -14,8 +14,8 @@ function Signup() {
           <h2 style={{ marginBottom: '1em', textAlign: 'center' }}>Sign up</h2>
           <Formik
             onSubmit= { (values) =>
-              // console.log(values),
-              api.post('/', values)
+              // console.log(values)
+              api.post('/', { user: values })
               .then(values => console.log('new user submitted', values))
               .catch(err => console.log(err))
             }

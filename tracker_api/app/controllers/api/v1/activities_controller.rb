@@ -18,7 +18,7 @@ class Api::V1::ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
 
     if @activity.save
-      render json: @activity, status: :created, location: api_v1_article_url(@activity)
+      render json: @activity, status: :created, location: api_v1_activity_url(@activity)
     else
       render json: @activity.errors, status: :unprocessable_entity
     end
