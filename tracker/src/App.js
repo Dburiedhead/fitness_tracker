@@ -16,7 +16,7 @@ function Menu(props) {
 function App() {
   return (
     <div className="App">
-      <Menu isLogged={false} />
+      <Menu isLogged={true} />
       <div className="content">
         <Main />
       </div>

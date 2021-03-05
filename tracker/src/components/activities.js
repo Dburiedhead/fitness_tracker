@@ -4,7 +4,7 @@ import Add from './add_activity'
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3001/api/v1/activities'
+    baseURL: 'http://localhost:3001/api/activities'
 })
 
 class Activities extends Component {

@@ -10,8 +10,9 @@ class Home extends Component {
                 <Jumbotron style={{ height: '90vh', margin: '0' }}>
                     <Row>
                         <Col lg={7}>
-                            <h1>Home page</h1>
-                            <p>Some presentation text</p>
+                            <h1>Moove and Groove</h1>
+                            <p>Your simple sport tracker
+                            <br/>Select the sport, log your workouts and keep track of your routine !</p>
                         </Col>
                         <Col lg={5}>
                             <Login />
