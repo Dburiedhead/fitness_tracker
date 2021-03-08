@@ -2,6 +2,7 @@
 
 # dependencies
 tracker/node_modules/**
+tracker_api/tmp/**
 /node_modules
 node_modules/**
 tmp/cache/**

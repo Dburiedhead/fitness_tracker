@@ -10,7 +10,6 @@ class UserMenu extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>
-                            <Nav.Link href="./dashboard">Dashboard</Nav.Link>
                             <Nav.Link href="./activities">Activities</Nav.Link>
                             <Nav.Link href="./test">Test</Nav.Link>
                             <Nav.Link href="./profile">Profile</Nav.Link>

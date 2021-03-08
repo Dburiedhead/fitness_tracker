@@ -46,6 +46,6 @@ class Api::V1::UserActivitiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_activity_params
-      params.require(:user_activity).permit(:user_id, :activity_id, :date, :duration)
+      params.require(:user_activity).permit(:user_id, :activity_id, :date, :duration, :description)
     end
 end

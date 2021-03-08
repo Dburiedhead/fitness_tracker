@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row,Col, Jumbotron, Container } from 'react-bootstrap';
+import { Row,Col, Jumbotron } from 'react-bootstrap';
 import Login from './login';
 
 class Home extends Component {

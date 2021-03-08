@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Col, Form, Button, Container } from 'react-bootstrap'
 import { Formik } from 'formik';
 import axios from 'axios';
