@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Row, Col, Button, Modal, Container, Card, Image, Accordion } from 'react-bootstrap'
+import { Row, Col, Button, Modal, Container, Card, Image, Accordion, Table } from 'react-bootstrap'
 import NewActivity from './activity_add'
 import axios from 'axios';
 
@@ -67,8 +67,31 @@ class Activities extends Component {
                         <AddActivityModal />
                     </Col>
                 </Row>
-                    <Row>
-                        <Accordion defaultActiveKey="0">
+                {this.state.activities.map(({name, description, image}, index) =>
+                    <Row key={index}>
+                            <Table borderless responsive key={index}>
+                        <Accordion>
+                                <tbody>
+                                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                                        <tr>
+                                            <td><Image rounded src={image} style={{ width: '50px', marginRight: '1em' }} /></td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                        </tr>
+                                    </Accordion.Toggle>
+                                    <Accordion.Collapse eventKey="1">
+                                        <tr>
+                                            <td>user_activities with the corresponding activity_id</td>
+                                            <td>Edit button</td>
+                                            <td>Delete button</td>
+                                        </tr>
+                                    </Accordion.Collapse>
+                                </tbody>
+                        </Accordion>
+                            </Table>
+                    </Row>
+                )}
+                    {/* <Row>
                             {this.state.activities.map(({name, description, image}, index) =>
                                 <Accordion defaultActiveKey="0">
                                 <Card>
@@ -83,8 +106,7 @@ class Activities extends Component {
                                 </Card>
                               </Accordion>
                             )}
-                        </Accordion>
-                    </Row>
+                    </Row> */}
             </Container>
         )
     }
