@@ -1,0 +1,218 @@
+  [1m[35m (4974.0ms)[0m  [1m[35mCREATE DATABASE "rails_tracker_development" ENCODING = 'unicode'[0m
+  [1m[35m (2234.4ms)[0m  [1m[35mCREATE DATABASE "rails_tracker_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:14:37 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 114.6ms | Allocations: 477)
+Completed 200 OK in 406ms (Views: 228.4ms | ActiveRecord: 0.0ms | Allocations: 2925)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:17:01 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 6.3ms | Allocations: 84)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/diank/OneDrive/PC/Documents/1 Travail/Cours/1 OCR Full-stack dev/Cours/6 Track your fitness habits/fitness_tracker/rails_tracker/public/packs
+[Webpacker] Hash: 40375607997ed1677f01
+Version: webpack 4.46.0
+Time: 24278ms
+Built at: 2021-03-13 17:17:43
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+    js/hello_react-0955208a7a732ec944b3.js    1.1 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-0955208a7a732ec944b3.js.map   1.27 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  703 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+Entrypoint hello_react = js/hello_react-0955208a7a732ec944b3.js js/hello_react-0955208a7a732ec944b3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.18 KiB {hello_react} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 18 hidden modules
+
+Completed 200 OK in 40086ms (Views: 40079.6ms | ActiveRecord: 0.0ms | Allocations: 30837)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:20:19 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 81)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/diank/OneDrive/PC/Documents/1 Travail/Cours/1 OCR Full-stack dev/Cours/6 Track your fitness habits/fitness_tracker/rails_tracker/public/packs
+[Webpacker] Hash: fdae9d22759b501c9654
+Version: webpack 4.46.0
+Time: 31854ms
+Built at: 2021-03-13 17:20:58
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-a8b0c4a4fc2d57942f7e.js   1.32 MiB  application  [emitted] [immutable]  application
+js/application-a8b0c4a4fc2d57942f7e.js.map   1.46 MiB  application  [emitted] [dev]        application
+    js/hello_react-0955208a7a732ec944b3.js    1.1 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-0955208a7a732ec944b3.js.map   1.27 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  703 bytes               [emitted]              
+Entrypoint application = js/application-a8b0c4a4fc2d57942f7e.js js/application-a8b0c4a4fc2d57942f7e.js.map
+Entrypoint hello_react = js/hello_react-0955208a7a732ec944b3.js js/hello_react-0955208a7a732ec944b3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 813 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.18 KiB {hello_react} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 25 hidden modules
+
+Completed 200 OK in 38873ms (Views: 38865.9ms | ActiveRecord: 0.0ms | Allocations: 9677)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:22:01 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/diank/OneDrive/PC/Documents/1 Travail/Cours/1 OCR Full-stack dev/Cours/6 Track your fitness habits/fitness_tracker/rails_tracker/public/packs
+[Webpacker] Hash: 31f3cb3c5498065427f3
+Version: webpack 4.46.0
+Time: 14385ms
+Built at: 2021-03-13 17:22:24
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-69b55cffa751987ed7ac.js   2.42 MiB  application  [emitted] [immutable]  application
+js/application-69b55cffa751987ed7ac.js.map   2.73 MiB  application  [emitted] [dev]        application
+    js/hello_react-0955208a7a732ec944b3.js    1.1 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-0955208a7a732ec944b3.js.map   1.27 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  703 bytes               [emitted]              
+Entrypoint application = js/application-69b55cffa751987ed7ac.js js/application-69b55cffa751987ed7ac.js.map
+Entrypoint hello_react = js/hello_react-0955208a7a732ec944b3.js js/hello_react-0955208a7a732ec944b3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 840 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.18 KiB {hello_react} {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 25 hidden modules
+
+Completed 200 OK in 23174ms (Views: 23172.4ms | ActiveRecord: 0.0ms | Allocations: 8634)
+
+
+  [1m[35m (61.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5521495496329156365)[0m
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20210313162456)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (5.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210313162456"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-13 16:25:37.987856"], ["updated_at", "2021-03-13 16:25:37.987856"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5521495496329156365)[0m
+  [1m[35m (21.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (68.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user-1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (5.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user-1@example.com"], ["encrypted_password", "$2a$12$8ooNkGiiKSl7DSIzH9NGeOO7FHLnpdwTAWdIbsM0y89Vmi3UWNMMq"], ["created_at", "2021-03-13 16:26:59.578488"], ["updated_at", "2021-03-13 16:26:59.578488"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user-2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user-2@example.com"], ["encrypted_password", "$2a$12$xYPVcJrgQMG4P8N7mhDTNesuLZeoJsc5R0g.Ia0R/bRQU5HaeofLW"], ["created_at", "2021-03-13 16:27:00.080506"], ["updated_at", "2021-03-13 16:27:00.080506"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:32:54 +0100
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x000000000947b180>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:36:23 +0100
+  [1m[35m (71.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:38:17 +0100
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x000000000988c9b8>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:43:59 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.1ms | Allocations: 207)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navigation.html.erb (Duration: 29.3ms | Allocations: 411)
+  Rendered shared/_flash.html.erb (Duration: 16.7ms | Allocations: 176)
+Completed 200 OK in 614ms (Views: 569.9ms | ActiveRecord: 0.0ms | Allocations: 13747)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:44:17 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:4:in `block (2 levels) in <main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-03-13 17:45:02 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navigation.html.erb (Duration: 1.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 139ms (Views: 137.4ms | ActiveRecord: 0.0ms | Allocations: 6429)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-13 17:45:12 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 18.0ms | Allocations: 610)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 814.5ms | Allocations: 9159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navigation.html.erb (Duration: 0.9ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 1155ms (Views: 1037.6ms | ActiveRecord: 22.8ms | Allocations: 23370)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-13 17:51:47 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 15.7ms | Allocations: 521)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 47.9ms | Allocations: 1894)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navigation.html.erb (Duration: 2.4ms | Allocations: 329)
+  Rendered shared/_flash.html.erb (Duration: 2.2ms | Allocations: 165)
+Completed 200 OK in 279ms (Views: 273.6ms | ActiveRecord: 0.0ms | Allocations: 10781)
+
+

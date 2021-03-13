@@ -66,8 +66,8 @@ yarn-error.log*
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-rails_tracker//log/*
-rails_tracker//tmp/*
+rails_tracker/log/*
+rails_tracker/tmp/*
 !/log/.keep
 !/tmp/.keep
 
