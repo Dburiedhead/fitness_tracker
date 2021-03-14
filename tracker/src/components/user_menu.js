@@ -6,7 +6,7 @@ class UserMenu extends Component {
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="./dashboard">Moove and groove</Navbar.Brand>
+                    <Navbar.Brand href="./activities">Moove and groove</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>

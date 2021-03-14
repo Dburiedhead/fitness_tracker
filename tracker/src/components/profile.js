@@ -1,27 +1,84 @@
 import React from 'react';
-import { Row, Col, Button, Container } from 'react-bootstrap'
+import { Row, Col, Button, Container, Form } from 'react-bootstrap';
+import {Formik} from 'formik';
+// import axios from 'axios'
 
-function edit() {
-    console.log('edit the field !')
+// const api = axios.create({
+//     baseURL: 'http://localhost:3001/api/v1/sessions'
+// });
+
+function deleteAccount() {
+    console.log('To delete your account, please click on confirm');
 };
 
-/*function Fields () {
+function FormFields() {
+  
+    return (
+        <>
+            <Formik
+                onSubmit= { (values) =>
+                    console.log(values)
+                    // api.post('/', values)
+                    // .then(values => console.log('new user submitted', values))
+                    // .catch(err => console.log(err))
+                }
+                initialValues={{
+                    email: 'user_email',
+                    password: 'user_password',
+                }}
+            >
+                {({
+                    handleSubmit,
+                    handleChange,
+                    values,
+                }) => (
+                    <Form noValidate onSubmit={handleSubmit}>
+                        <Form.Row>
+                            <Col md={6}>
+                                <Form.Group controlId="validationFormik01">
+                                    <Form.Control
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={values.email}
+                                    onChange={handleChange}
+                                    plaintext
+                                    />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            </Form.Group>
+                            <Form.Group controlId="validationFormik02">
+                                <Form.Control
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                value={values.password}
+                                onChange={handleChange}
+                                plaintext
+                                />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            </Form.Group>
+                            </Col>
+                    </Form.Row>
+                    <Button type="submit">Save</Button>
+                    </Form>
+                )}
+            </Formik>
+        </>
+    );
+}
 
-};*/
+function Profile(props) {
 
-function Profile() {
     return (
         <div>
             <h1>Profile page</h1>
-            <p>Edit your profile, delete your account</p>
             <Container style={{ paddingTop: '2%', background: 'rgb(255, 255, 255)' }}>
                 <Row>
-                    <Col md={10}>
-                    {/* <Fields /> */}
-                    </Col>
-                    <Col md={2}>
-                        <Button variant='primary' onClick={edit}>Edit your profile</Button>
-                    </Col>
+                    <FormFields />
+                </Row>
+                <Row>
+                    <p>Do you want to delete your account ?</p>
+                    <Button variant='danger' style={{ marginLeft: '1em' }} onClick={deleteAccount}>Delete my account</Button>
                 </Row>
             </Container>
         </div>

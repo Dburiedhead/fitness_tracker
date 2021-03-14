@@ -59,54 +59,70 @@ class Activities extends Component {
         return (
             
             <Container style={{ paddingTop: '2%', background: 'rgb(255, 255, 255)' }}>
-                <Row>
-                    <Col md={10}>
-                        <h1>All Activities</h1>
-                    </Col>
-                    <Col md={2}>
-                        <AddActivityModal />
-                    </Col>
-                </Row>
-                {this.state.activities.map(({name, description, image}, index) =>
-                    <Row key={index}>
-                            <Table borderless responsive key={index}>
-                        <Accordion>
-                                <tbody>
-                                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                                        <tr>
-                                            <td><Image rounded src={image} style={{ width: '50px', marginRight: '1em' }} /></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                        </tr>
-                                    </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="1">
-                                        <tr>
-                                            <td>user_activities with the corresponding activity_id</td>
-                                            <td>Edit button</td>
-                                            <td>Delete button</td>
-                                        </tr>
-                                    </Accordion.Collapse>
-                                </tbody>
-                        </Accordion>
-                            </Table>
-                    </Row>
-                )}
-                    {/* <Row>
-                            {this.state.activities.map(({name, description, image}, index) =>
-                                <Accordion defaultActiveKey="0">
-                                <Card>
-                                  <Accordion.Toggle as={Card.Header} eventKey={index}>
-                                    <Image rounded src={image} style={{ width: '50px', marginRight: '1em' }} />
-                                    <h2 style={{ marginRight: '1em' }}>{name}</h2>
-                                    <p style={{ margin: 'auto 0' }}>{description}</p>
-                                  </Accordion.Toggle>
-                                  <Accordion.Collapse eventKey={index}>
-                                    <Card.Body>user_activities with the corresponding activity_id</Card.Body>
-                                  </Accordion.Collapse>
-                                </Card>
-                              </Accordion>
-                            )}
-                    </Row> */}
+              <Row>
+                  <Col md={10}>
+                      <h1>All Activities</h1>
+                  </Col>
+                  <Col md={2}>
+                      <AddActivityModal />
+                  </Col>
+              </Row>
+              <Row>
+                <Accordion defaultActiveKey="0" style={{ width: '100%', marginTop: '1em' }}>
+                  {this.state.activities.map(({name, description, image}, index) =>
+                    <Card>
+                      <Accordion.Toggle
+                        as={Card.Header}
+                        eventKey={index}
+                        key={index}
+                        style={{ display: 'flex', flexDirection: 'row' }}
+                      >
+                        <Image rounded src={image} style={{ width: '50px', marginRight: '1em' }} />
+                        <span>
+                          <h2 style={{ marginRight: '1em' }}>{name}</h2>
+                        </span>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey={index}>
+                        <Card.Body>
+                          user_activities with the corresponding activity_id
+                          <Table borderless>
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Activity</th>
+                                <th>Duration</th>
+                                <th>Description</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr key={index}>
+                                <td>
+                                  id
+                                </td>
+                                <td>
+                                  Date
+                                </td>
+                                <td>
+                                  Activity : user_activities with the corresponding activity_id
+                                </td>
+                                <td>
+                                  Duration
+                                </td>
+                                <td>
+                                  Description
+                                </td>
+                              </tr>
+                            </tbody>
+                          </Table>
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                  )}
+                </Accordion>
+              </Row>
             </Container>
         )
     }
