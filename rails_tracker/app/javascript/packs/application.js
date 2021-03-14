@@ -15,7 +15,7 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
+require("./components/App");
 require ('bootstrap')
-import 'bootstrap/dist/css/bootstrap'
-require('./hello_react')
+// import 'bootstrap/dist/css/bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
