@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Button, Container, Form } from 'react-bootstrap';
 import {Formik} from 'formik';
-import axios from 'axios'
+import axios from 'axios';
+import Cookies from 'js-cookie'
 
 function deleteAccount() {
     console.log('To delete your account, please click on confirm');
-    alert(document.cookie);
+    // axios.get('/api/v1/session')
+    console.log(Cookies.get('useremail'))
 };
+
 
 function FormFields() {
   
@@ -20,7 +23,7 @@ function FormFields() {
                     // .catch(err => console.log(err))
                 }
                 initialValues={{
-                    email: 'user_email',
+                    email: Cookies.get('useremail'),
                     password: 'user_password',
                 }}
             >
@@ -66,22 +69,23 @@ function FormFields() {
 
 export default function Profile(props) {
 
-    const [items, setItems] = useState([]);
+    // const [items, setItems] = useState([]);
 
-    const getItems = async () => {
-        try {
-            const allItems = await
+    // const getItems = async () => {
+    //     try {
+    //         const allItems = await
 
-            axios.get('/api/v1/session')
-            setItems(allItems.data); //set State
-        } catch (err) {
-            console.error(err.message);
-        }
-    }
+        //     axios.get('/api/v1/session')
+        //     setItems(allItems.data); //set State
+        // } catch (err) {
+        //     console.error(err.message);
+        // }
+    // }
     
-    useEffect(() => {
-        getItems()
-    }, []);
+    // useEffect(() => {
+    //     getItems()
+    // }, []);
+
     return (
         <div>
             <h1>Profile page</h1>
