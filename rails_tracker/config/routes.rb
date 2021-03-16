@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   authenticated :user do
     root 'pages#activities', as: :authenticated_root
-    # get 'pages#profile'
+    get 'profile', to: 'pages#profile'
   end
   root 'pages#home'
   namespace :api, defaults: { format: :json } do
@@ -11,5 +11,4 @@ Rails.application.routes.draw do
       resources :activities
     end
   end
-  # match '*path', to: 'page#index', via: :all
 end
