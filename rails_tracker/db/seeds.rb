@@ -8,6 +8,6 @@
 
 User.all.each do |u|
     3.times do |i|
-        u.user_activities.create(activity: i+1, duration: "00:45:00" , date: "2021-03-10", description: "User #{u.email} activity test"  )
+        u.user_activities.create(activity_id: i+1, duration: "00:45:00" , date: "2021-03-10", description: "User #{u.email} activity test"  )
     end
 end
