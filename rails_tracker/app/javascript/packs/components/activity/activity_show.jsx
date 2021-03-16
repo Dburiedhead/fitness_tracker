@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Table, Button } from 'react-bootstrap'
+import axios from 'axios'
 
 /*class TodoItem extends React.Component {
   constructor(props) {
@@ -54,46 +55,24 @@ TodoItem.propTypes = {
 
 class ActivityShow extends React.Component {
 
+  state = {
+    user_activities: []
+  }
+
+  constructor() {
+    super();
+    axios.get('/api/v1/user_activities').then(res => {
+        let user_activities = res.data
+        this.setState({user_activities})
+        console.log(user_activities)
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
-      // <table className="table table-bordered">
-      //   <thead>
-      //     <tr>
-      //       <th>#</th>
-      //       <th>Date</th>
-      //       <th>Activity</th>
-      //       <th>Duration</th>
-      //       <th>Description</th>
-      //       <th>Edit</th>
-      //       <th>Delete</th>
-      //     </tr>
-      //   </thead>
-      //   <tbody>
-      //     <tr>
-      //       <td>
-      //         id
-      //       </td>
-      //       <td>
-      //         Date
-      //       </td>
-      //       <td>
-      //         Activity : user_activities with the corresponding activity_id
-      //       </td>
-      //       <td>
-      //         Duration
-      //       </td>
-      //       <td>
-      //         Description
-      //       </td>
-      //       <td>
-      //         <button className="btn btn-outline-secondary">Edit</button>
-      //       </td>
-      //       <td>
-      //         <button className="btn btn-outline-danger">Delete</button>
-      //       </td>
-      //     </tr>
-      //   </tbody>
-      // </table>
       <Table borderless responsive>
         <thead>
           <tr>
@@ -107,29 +86,31 @@ class ActivityShow extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              id
-            </td>
-            <td>
-              Date
-            </td>
-            <td>
-              Activity : user_activities with the corresponding activity_id
-            </td>
-            <td>
-              Duration
-            </td>
-            <td>
-              Description
-            </td>
-            <td>
-              <Button variant="outline-secondary">Edit</Button>
-            </td>
-            <td>
-              <Button variant="outline-danger">Delete</Button>
-            </td>
-          </tr>
+          {this.state.user_activities.map(({ id, activity_id, description, duration, date }, index) =>
+            <tr key = {index}>
+              <td>
+                {id}
+              </td>
+              <td>
+                {date}
+              </td>
+              <td>
+                {activity_id}
+              </td>
+              <td>
+                {duration}
+              </td>
+              <td>
+                {description}
+              </td>
+              <td>
+                <Button variant="outline-secondary">Edit</Button>
+              </td>
+              <td>
+                <Button variant="outline-danger">Delete</Button>
+              </td>
+            </tr>
+          )}
         </tbody>
       </Table>
     )
