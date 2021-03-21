@@ -16,6 +16,14 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 require("./components/App");
+require("./Profile");
+require("./Home");
 require ('bootstrap')
+require ('popper.js')
+require ('jquery')
+
 // import 'bootstrap/dist/css/bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-bootstrap'
+import 'jquery'
+import 'popper.js'

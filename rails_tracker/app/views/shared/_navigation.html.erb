@@ -1,19 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-  <div class="container">
-    <%= link_to "Rails React Example", root_path, class: "navbar-brand" %>
+  <div class="container-fluid">
+    <%= link_to "Moove and groove", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <%# Important part %>
           <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-          <% else %>
-            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
-          <% end %>
+        <li class="nav-item">
+          <%= link_to('Activities', root_path, class: "nav-link") %>
         </li>
+        <li class="nav-item dropdown">
+          <button class="nav-link btn btn-link dropdown-toggle" data-bs-toggle="dropdown" type="button" aria-expanded="false">Profile</a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to('My data', profile_path, class: "nav-link") %>
+            </li>
+            <li>
+            <%= link_to('Edit Profile', edit_user_registration_path, class: "dropdown-item") %>
+            </li>
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+        </li>
+        <% end %>
       </ul>
     </div>
   </div>

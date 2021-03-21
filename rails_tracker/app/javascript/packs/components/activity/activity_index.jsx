@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react';
 import axios from 'axios';
 import ActivityShow from './activity_show'
 import ActivityAdd from './activity_add'
-import Profile from '../Profile'
 import { Row, Col, Button, Modal, Container, Card, Image, Accordion, Table } from 'react-bootstrap'
 
 function AddActivityModal() {
@@ -36,6 +35,7 @@ function AddActivityModal() {
     </>
   );
 }
+
 class ActivityIndex extends Component {
 
   state = {
@@ -57,7 +57,6 @@ class ActivityIndex extends Component {
 
     return (
       <Container style={{ paddingTop: '2%', background: 'rgb(255, 255, 255)' }}>
-        <Profile />
         <Row>
           <Col md={10}>
             <h1>All Activities</h1>

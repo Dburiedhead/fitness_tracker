@@ -27,12 +27,12 @@ export default function ActivityAdd() {
           <Formik
               onSubmit= { (values) =>
               console.log(values)
-              /*,api.post('/', { user_activity: values })
+              /*,api.post('/api/v1/user_activities', {
+                  user_activity: values })
               .then(values => console.log('new user submitted', values))
               .catch(err => console.log(err))*/
               }
               initialValues={{
-                  user_id: null,
                   activity_id: null,
                   date: '',
                   duration: '',
@@ -56,7 +56,7 @@ export default function ActivityAdd() {
                               <Form.Control as="select" onChange={handleChange} defaultValue="Select activity">
                               <option>Choose...</option>
                               {activities.map(act => (
-                                  <option key={act.id}>{act.name}</option>
+                                  <option key={act.id} activity_id={act.id}>{act.name}</option>
                               ))}                                  
                               </Form.Control>
                           </Form.Group>

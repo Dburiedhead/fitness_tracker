@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
     
     private
         def set_user
-            cookies[:useremail] = current_user.email || 'guest'
+            if current_user.present?
+                cookies[:useremail] = current_user.email
+            end
         end
 end

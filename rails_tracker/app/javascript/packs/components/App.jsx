@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Activity from './activity/activity_index.jsx'
-import Profile from './Profile'
+import Profile from '../Profile'
+import Home from '../Home'
 
 class App extends React.Component {
   render() {
@@ -14,12 +15,7 @@ class App extends React.Component {
 document.addEventListener('turbolinks:load', () => {
   const app = document.getElementById('fitness-app')
   app && ReactDOM.render(
-    <BrowserRouter>
-      <Route path ='/' component = { App } />
-      <Switch>
-        <Route path ='/profile' component = { Profile } />
-    </Switch>
-    </BrowserRouter>,
+    <App />,
     app
   )
 })
