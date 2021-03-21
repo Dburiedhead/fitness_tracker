@@ -71,7 +71,7 @@ class Api::V1::UserActivitiesController < ApplicationController
     #     end
 
     before_action :authenticate_user!
-    before_action :set_user_activity, only: [:show, :update, :destroy]
+    before_action :set_user_activity, only: [:show, :edit, :update, :destroy]
 
   # GET /user_activities
 
@@ -89,12 +89,49 @@ class Api::V1::UserActivitiesController < ApplicationController
 
   # POST /user_activities
   def create
-    @user_activity = UserActivity.new(user_activity_params)
+    @user_activity = current_user.user_activities.build(user_activity_params)
 
-    if @user_activity.save
-      render json: @user_activity, status: :created, location: api_v1_user_activity_url(@user_activity)
+    if authorized?
+      if @user_activity.save
+        render json: @user_activity , status: :created, location: api_v1_user_activity_url(@user_activity)
+      else
+        render json: @user_activity.errors, status: :unprocessable_entity
+      end
     else
-      render json: @user_activity.errors, status: :unprocessable_entity
+      handle_unauthorized
     end
+  end
+
+  def update
+    # @user_activity = current_user.user_activities.build(user_activity_params)
+    if authorized?
+      if @user_activity.update(user_activity_params)
+        render json: @user_activity, status: :ok, location: api_v1_user_activity_url(@user_activity)
+      else
+        render json: @user_activity.errors, status: :unprocessable_entity
+      end
+    else
+      handle_unauthorized
+    end
+  end
+    
+    def destroy
+      if authorized?
+        @user_activity.destroy
+          head :no_content
+      else
+        handle_unauthorized
+      end
+    end
+  private
+  def set_user_activity
+    @user_activity = UserActivity.find(params[:id])
+  end
+
+  def user_activity_params
+    params.require(:user_activity).permit(:activity_id, :date, :description, :duration)
+  end
+  def authorized?
+    @user_activity.user == current_user
   end
 end

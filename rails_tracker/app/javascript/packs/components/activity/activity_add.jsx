@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
 import { Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios';
+import setAxiosHeaders from "../AxiosHeaders";
 import { Formik } from 'formik'
 
 export default function ActivityAdd() {
@@ -12,7 +13,7 @@ export default function ActivityAdd() {
             const allActivities = await
 
             axios.get('/api/v1/activities')
-            setActivities(allActivities.data); //set State
+            setActivities(allActivities.data);
         } catch (err) {
             console.error(err.message);
         }
@@ -25,13 +26,11 @@ export default function ActivityAdd() {
     return (
       <div>
           <Formik
-              onSubmit= { (values) =>
-              console.log(values)
-              /*,api.post('/api/v1/user_activities', {
-                  user_activity: values })
-              .then(values => console.log('new user submitted', values))
-              .catch(err => console.log(err))*/
-              }
+            onSubmit= { setAxiosHeaders(), (values) =>
+                axios.post('/api/v1/user_activities', values)
+                .then(values => console.log('new activity submitted', values))
+                .catch(err => console.log(err))
+                }
               initialValues={{
                   activity_id: null,
                   date: '',
@@ -51,12 +50,12 @@ export default function ActivityAdd() {
                               {/* <DatePicker selected={date} onChange={handleChange} dateFormat='MM/dd/yyyy' placeholder="Click to select a date"/> */}
                               <Form.Control onChange={handleChange} placeholder="MM/dd/yyy" />
                           </Form.Group>
-                          <Form.Group as={Col} controlId="name">
-                              <Form.Label>Activity name</Form.Label>
+                          <Form.Group as={Col} controlId="activity_id">
+                              <Form.Label>Activity</Form.Label>
                               <Form.Control as="select" onChange={handleChange} defaultValue="Select activity">
                               <option>Choose...</option>
                               {activities.map(act => (
-                                  <option key={act.id} activity_id={act.id}>{act.name}</option>
+                                  <option key={act.id} value={act.id}>{act.name}</option>
                               ))}                                  
                               </Form.Control>
                           </Form.Group>
@@ -66,7 +65,7 @@ export default function ActivityAdd() {
                           </Form.Group>
                       </Form.Row>
                       <Form.Row>
-                          <Form.Group as={Col} controlId="comment">
+                          <Form.Group as={Col} controlId="description">
                               <Form.Label>Comment</Form.Label>
                               <Form.Control as='textarea' onChange={handleChange} placeholder="How was your workout ?" />
                           </Form.Group>
