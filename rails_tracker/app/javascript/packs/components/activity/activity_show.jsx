@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Table, Button } from 'react-bootstrap'
 import axios from 'axios'
+import setAxiosHeaders from "../AxiosHeaders";
 
 /*class TodoItem extends React.Component {
   constructor(props) {
@@ -52,7 +53,6 @@ TodoItem.propTypes = {
   todoItem: PropTypes.object.isRequired,
 }*/
 
-
 class ActivityShow extends React.Component {
 
   state = {
@@ -72,6 +72,20 @@ class ActivityShow extends React.Component {
   }
 
   render() {
+    function handleEdit(id) {
+      console.log(id, 'edited')
+    }
+    
+    function handleDelete(id) {
+      console.log(id, 'deleted')
+      setAxiosHeaders()
+      axios.delete(`/api/v1/user_activities/${id}`).then(res => {
+        console.log('Activity deleted', res)
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
     return (
       <Table borderless responsive>
         <thead>
@@ -87,7 +101,7 @@ class ActivityShow extends React.Component {
         </thead>
         <tbody>
           {this.state.user_activities.map(({ id, activity_id, description, duration, date }, index) =>
-            <tr key = {index}>
+            <tr key={id}>
               <td>
                 {id}
               </td>
@@ -104,10 +118,10 @@ class ActivityShow extends React.Component {
                 {description}
               </td>
               <td>
-                <Button variant="outline-secondary">Edit</Button>
+                <Button variant="outline-secondary" onClick={() => handleEdit(id)}>Edit</Button>
               </td>
               <td>
-                <Button variant="outline-danger">Delete</Button>
+                <Button variant="outline-danger" onClick={() => handleDelete(id)}>Delete</Button>
               </td>
             </tr>
           )}
