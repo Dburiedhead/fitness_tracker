@@ -28,7 +28,7 @@ export default function ActivityAdd() {
           <Formik
             onSubmit= { setAxiosHeaders(), (values) =>
                 axios.post('/api/v1/user_activities', values)
-                .then(values => console.log('new activity submitted', values))
+                .then(values => console.log('new activity submitted', values), window.location.reload())
                 .catch(err => console.log(err))
                 }
               initialValues={{
