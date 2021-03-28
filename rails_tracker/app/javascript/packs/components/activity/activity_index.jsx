@@ -26,11 +26,6 @@ function AddActivityModal() {
         <Modal.Body>
           <ActivityAdd />
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancel
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );
@@ -59,7 +54,7 @@ class ActivityIndex extends Component {
       <Container style={{ paddingTop: '2%', background: 'rgb(255, 255, 255)' }}>
         <Row>
           <Col md={10}>
-            <h1>All Activities</h1>
+            <h1>My Activities</h1>
           </Col>
           <Col md={2}>
             <AddActivityModal />
@@ -81,7 +76,7 @@ class ActivityIndex extends Component {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={index+1}>
                   <Card.Body>
-                    <ActivityShow />
+                    <ActivityShow key={index} activityIndex={index}/>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
