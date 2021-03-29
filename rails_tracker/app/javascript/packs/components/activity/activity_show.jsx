@@ -14,6 +14,7 @@ function EditActivityModal(id) {
     <>
       <Button variant="outline-secondary" onClick={() => handleShow(id)}>Edit</Button>
 
+     {console.log(`${id} for editing`)}
       <Modal
         show={show}
         onHide={handleClose}
@@ -24,7 +25,7 @@ function EditActivityModal(id) {
           <Modal.Title>Edit activity</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ActivityEdit activity_id={id.id}/>
+          <ActivityEdit user_activity_id={id.id}/>
         </Modal.Body>
       </Modal>
     </>
@@ -66,9 +67,9 @@ class ActivityShow extends React.Component {
 
         <thead>
           <tr>
-            <th>#</th>
+            {/* <th>#</th> */}
             <th>Date</th>
-            <th>Activity {this.props.activityIndex}</th>
+            {/* <th>Activity</th> */}
             <th>Duration</th>
             <th>Description</th>
             <th>Edit</th>

@@ -76,7 +76,7 @@ class ActivityIndex extends Component {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={index+1}>
                   <Card.Body>
-                    <ActivityShow key={index} activityIndex={index}/>
+                    <ActivityShow key={index+1} activityIndex={index+1}/>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
