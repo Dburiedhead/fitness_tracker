@@ -4,7 +4,7 @@ import axios from 'axios'
 import setAxiosHeaders from "../AxiosHeaders";
 import ActivityEdit from './activity_edit'
 
-function EditActivityModal(id) {
+function EditActivityModal(userAct) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,9 +12,7 @@ function EditActivityModal(id) {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={() => handleShow(id)}>Edit</Button>
-
-     {console.log(`${id} for editing`)}
+      <Button variant="outline-secondary" onClick={() => handleShow(userAct)}>Edit</Button>
       <Modal
         show={show}
         onHide={handleClose}
@@ -25,7 +23,7 @@ function EditActivityModal(id) {
           <Modal.Title>Edit activity</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ActivityEdit user_activity_id={id.id}/>
+          <ActivityEdit user_activity_id={userAct.id} user_activity_date={userAct.date} user_activity_duration={userAct.duration} user_activity_description={userAct.description} />
         </Modal.Body>
       </Modal>
     </>
@@ -95,7 +93,7 @@ class ActivityShow extends React.Component {
                 {description}
               </td>
               <td>
-                <EditActivityModal key={id} id={id}/>
+                <EditActivityModal key={id} id={id} date={date} duration={duration} description={description} />
               </td>
               <td>
                 <Button variant="outline-danger" onClick={() => handleDelete(id)}>Delete</Button>

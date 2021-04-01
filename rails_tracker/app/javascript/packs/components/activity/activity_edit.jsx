@@ -7,6 +7,7 @@ import { Formik } from 'formik';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
 export default function ActivityEdit(props) {
     const [userActivity, setUserActivity] = useState([]);
 
@@ -25,16 +26,8 @@ export default function ActivityEdit(props) {
         getUserActivity()
     }, []);
 
-    // const formData = {
-    //     userActivity_id: props.user_activity_id,
-    //     date: userActivity.date,
-    //     duration: userActivity.duration,
-    //     description: userActivity.description
-    // }
-
     return (
         <div>
-            <p>{props.user_activity_id}</p>
             <Formik
                 onSubmit={setAxiosHeaders(), (values) =>
                     axios.put(`/api/v1/user_activities/${props.user_activity_id}`, values)
@@ -42,10 +35,10 @@ export default function ActivityEdit(props) {
                         .catch(err => console.log(err))
                 }
                 initialValues={{
-                    userActivity_id: props.user_activity_id,
-                    date: '',
-                    duration: '',
-                    description: props.user_activity_id
+                    userActivityId: props.user_activity_id,
+                    date: props.user_activity_date,
+                    duration: props.user_activity_duration,
+                    description: props.user_activity_description
                 }}
                 // initialValues={formData}
             >
@@ -57,35 +50,27 @@ export default function ActivityEdit(props) {
                 }) => (
                     <Form onSubmit={handleSubmit}>
                         <Form.Row>
-                            {/* <Form.Group as={Col} controlId="date">
+                            <Form.Group as={Col} controlId="date">
                                 <Form.Label>Date</Form.Label>
                                 <DatePicker
-                                    selected={values.date}
-                                    className="form-control"
-                                    name="startDate"
+                                    selected={Date.parse(values.date)}
+                                    className="form-control-plaintext"
+                                    name="date"
                                     dateFormat='MM-dd-yyyy'
                                     onChange={date => setFieldValue('date', date)}
-                                    placeholderText={userActivity.date}
+                                    value={Date.parse(values.date)}
                                 />
-                            </Form.Group> */}
-                            {/* <Form.Group as={Col} controlId="userActivity_id">
+                            </Form.Group>
+                            <Form.Group as={Col} controlId="userActivityId">
                                 <Form.Label>Activity to edit</Form.Label>
-                                {userActivity.map(act => (
-                                    <Form.Control key={act.id} onChange={handleChange} defaultValue={act.name} plaintext readOnly />
-                                ))}
-                            </Form.Group> */}
-                            {/* <Form.Control as="select" onChange={handleChange} defaultValue="Select user Activity">
-                                <option>Choose...</option>
-                                {userActivity.map(act => (
-                                    <option key={act.id} value={act.id}>{act.name}</option>
-                                ))}
-                            </Form.Control> */}
-                            {/* <Form.Group as={Col} controlId="duration">
+                                <Form.Control plaintext readOnly name='description' onChange={handleChange} value={values.userActivityId}/>
+                            </Form.Group>
+                            <Form.Group as={Col} controlId="duration">
                                 <Form.Label>Duration</Form.Label>
                                 <DatePicker
-                                    selected={values.duration}
-                                    className="form-control"
-                                    name="startDuration"
+                                    selected={Date.parse(values.duration)}
+                                    className="form-control-plaintext"
+                                    name="duration"
                                     onChange={duration => setFieldValue('duration', duration)}
                                     showTimeSelect
                                     showTimeSelectOnly
@@ -93,14 +78,14 @@ export default function ActivityEdit(props) {
                                     timeCaption="Time"
                                     timeFormat="HH:mm:ss"
                                     dateFormat="HH:mm:ss"
-                                    placeholderText={ new Date (`${userActivity.duration}`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                                    value={Date.parse(values.duration)}
                                 />
-                            </Form.Group> */}
+                            </Form.Group>
                         </Form.Row>
                         <Form.Row>
                             <Form.Group as={Col} controlId="description">
                                 <Form.Label>Comment</Form.Label>
-                                <Form.Control as='textarea' onChange={handleChange}/>
+                                <Form.Control as='textarea' plaintext name='description' onChange={handleChange} value={values.description}/>
                             </Form.Group>
                         </Form.Row>
                         <Button variant="primary" type="submit">

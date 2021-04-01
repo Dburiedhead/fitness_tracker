@@ -25,13 +25,11 @@ export default function ActivityAdd() {
         getActivities()
     }, []);
 
-    // const [startDate, setStartDate] = useState(new Date());
-
     return (
         <div>
             <Formik
                 onSubmit={setAxiosHeaders(), (values) =>
-                    axios.post('/api/v1/user_activities', values)
+                    axios.post('/api/v1/user_activities', {values})
                         .then(values => console.log('new activity submitted', values), window.location.reload())
                         .catch(err => console.log(err))
                 }
@@ -71,7 +69,6 @@ export default function ActivityAdd() {
                             </Form.Group>
                             <Form.Group as={Col} controlId="duration">
                                 <Form.Label>Duration</Form.Label>
-                                {/* <Form.Control onChange={handleChange} placeholder="Select a duration" /> */}
                                 <DatePicker
                                     selected={values.duration}
                                     className="form-control"
