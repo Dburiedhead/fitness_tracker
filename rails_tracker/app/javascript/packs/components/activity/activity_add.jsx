@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types'
 import { Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios';
 import setAxiosHeaders from "../AxiosHeaders";
@@ -29,9 +28,10 @@ export default function ActivityAdd() {
         <div>
             <Formik
                 onSubmit={setAxiosHeaders(), (values) =>
-                    axios.post('/api/v1/user_activities', {values})
-                        .then(values => console.log('new activity submitted', values), window.location.reload())
-                        .catch(err => console.log(err))
+                    axios.post('/api/v1/user_activities', values)
+                    .then( response => {if (response.status == 201){window.location.reload()}} )
+                    // .then(values => console.log('new activity submitted', values))
+                    .catch(err => console.log(err))
                 }
                 initialValues={{
                     activity_id: null,

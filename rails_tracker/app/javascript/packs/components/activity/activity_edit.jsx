@@ -7,31 +7,15 @@ import { Formik } from 'formik';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
 export default function ActivityEdit(props) {
-    const [userActivity, setUserActivity] = useState([]);
-
-    const getUserActivity = async () => {
-        try {
-            const selectedUserActivity = await
-
-                axios.get(`/api/v1/user_activities/${props.user_activity_id}`)
-            setUserActivity(selectedUserActivity.data);
-        } catch (err) {
-            console.error(err.message);
-        }
-    }
-
-    useEffect(() => {
-        getUserActivity()
-    }, []);
-
+    
     return (
         <div>
             <Formik
                 onSubmit={setAxiosHeaders(), (values) =>
                     axios.put(`/api/v1/user_activities/${props.user_activity_id}`, values)
-                        .then(values => console.log('user activity edited', values))
+                        // .then(response => console.log('user activity edited', response))
+                        .then( response => {if (response.status == 200){window.location.reload()}} )
                         .catch(err => console.log(err))
                 }
                 initialValues={{
@@ -40,7 +24,6 @@ export default function ActivityEdit(props) {
                     duration: props.user_activity_duration,
                     description: props.user_activity_description
                 }}
-                // initialValues={formData}
             >
                 {({
                     handleSubmit,
