@@ -62,7 +62,7 @@ class ActivityIndex extends Component {
         </Row>
         <Row>
           <Accordion defaultActiveKey="0" style={{ width: '100%', marginTop: '1em' }}>
-            {this.state.activities.map(({ name, description, image }, index) =>
+            {this.state.activities.map(({ name, image }, index) =>
               <Card key={index}>
                 <Accordion.Toggle
                   as={Card.Header}
@@ -76,7 +76,7 @@ class ActivityIndex extends Component {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={index+1}>
                   <Card.Body>
-                    <ActivityShow key={index+1} activityIndex={index+1}/>
+                    <ActivityShow key={index+1} activityIndex={index+1} activityName={name}/>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>

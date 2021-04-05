@@ -23,7 +23,7 @@ function EditActivityModal(userAct) {
           <Modal.Title>Edit activity</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ActivityEdit user_activity_id={userAct.id} user_activity_date={userAct.date} user_activity_duration={userAct.duration} user_activity_description={userAct.description} />
+          <ActivityEdit user_activity_id={userAct.id} user_activity_date={userAct.date} user_activity_name={userAct.name} user_activity_duration={userAct.duration} user_activity_description={userAct.description} />
         </Modal.Body>
       </Modal>
     </>
@@ -67,7 +67,7 @@ class ActivityShow extends React.Component {
           <tr>
             {/* <th>#</th> */}
             <th>Date</th>
-            {/* <th>Activity</th> */}
+            <th>Activity</th>
             <th>Duration</th>
             <th>Description</th>
             <th>Edit</th>
@@ -75,7 +75,7 @@ class ActivityShow extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.user_activities.filter(act => act.activity_id==this.props.activityIndex).map(({ id, activity_id, description, duration, date }, index) =>
+          {this.state.user_activities.filter(act => act.activity_id==this.props.activityIndex).map(({ id, description, duration, date }, index) =>
             <tr key={index}>
               {/* <td>
                 {id}
@@ -83,9 +83,9 @@ class ActivityShow extends React.Component {
               <td>
                 {date}
               </td>
-              {/* <td>
-                {activity_id}
-              </td> */}
+              <td>
+                {this.props.activityName}
+              </td>
               <td>
                 { new Date (`${duration}`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
               </td>
@@ -93,7 +93,7 @@ class ActivityShow extends React.Component {
                 {description}
               </td>
               <td>
-                <EditActivityModal key={id} id={id} date={date} duration={duration} description={description} />
+                <EditActivityModal key={id} id={id} date={date} name={this.props.activityName} duration={duration} description={description} />
               </td>
               <td>
                 <Button variant="outline-danger" onClick={() => handleDelete(id)}>Delete</Button>

@@ -9,6 +9,23 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function ActivityEdit(props) {
     
+    // const [userActivity, setUserActivity] = useState([]);
+
+    // const getUserActivity = async () => {
+    //     try {
+    //         const selectedUserActivity = await
+
+    //             axios.get(`/api/v1/user_activities/${props.user_activity_id}`)
+    //         setUserActivity(selectedUserActivity.data);
+    //     } catch (err) {
+    //         console.error(err.message);
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     getUserActivity()
+    // }, []);
+
     return (
         <div>
             <Formik
@@ -46,7 +63,7 @@ export default function ActivityEdit(props) {
                             </Form.Group>
                             <Form.Group as={Col} controlId="userActivityId">
                                 <Form.Label>Activity to edit</Form.Label>
-                                <Form.Control plaintext readOnly name='description' onChange={handleChange} value={values.userActivityId}/>
+                                <Form.Control plaintext readOnly name='description' onChange={handleChange} value={props.user_activity_name}/>
                             </Form.Group>
                             <Form.Group as={Col} controlId="duration">
                                 <Form.Label>Duration</Form.Label>
