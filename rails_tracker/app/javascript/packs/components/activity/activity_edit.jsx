@@ -8,30 +8,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ActivityEdit(props) {
-    
-    // const [userActivity, setUserActivity] = useState([]);
-
-    // const getUserActivity = async () => {
-    //     try {
-    //         const selectedUserActivity = await
-
-    //             axios.get(`/api/v1/user_activities/${props.user_activity_id}`)
-    //         setUserActivity(selectedUserActivity.data);
-    //     } catch (err) {
-    //         console.error(err.message);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getUserActivity()
-    // }, []);
-
     return (
         <div>
             <Formik
                 onSubmit={setAxiosHeaders(), (values) =>
                     axios.put(`/api/v1/user_activities/${props.user_activity_id}`, values)
-                        // .then(response => console.log('user activity edited', response))
                         .then( response => {if (response.status == 200){window.location.reload()}} )
                         .catch(err => console.log(err))
                 }
@@ -54,7 +35,7 @@ export default function ActivityEdit(props) {
                                 <Form.Label>Date</Form.Label>
                                 <DatePicker
                                     selected={Date.parse(values.date)}
-                                    className="form-control-plaintext"
+                                    className="form-control"
                                     name="date"
                                     dateFormat='MM-dd-yyyy'
                                     onChange={date => setFieldValue('date', date)}
@@ -62,14 +43,14 @@ export default function ActivityEdit(props) {
                                 />
                             </Form.Group>
                             <Form.Group as={Col} controlId="userActivityId">
-                                <Form.Label>Activity to edit</Form.Label>
+                                <Form.Label>Activity</Form.Label>
                                 <Form.Control plaintext readOnly name='description' onChange={handleChange} value={props.user_activity_name}/>
                             </Form.Group>
                             <Form.Group as={Col} controlId="duration">
                                 <Form.Label>Duration</Form.Label>
                                 <DatePicker
                                     selected={Date.parse(values.duration)}
-                                    className="form-control-plaintext"
+                                    className="form-control"
                                     name="duration"
                                     onChange={duration => setFieldValue('duration', duration)}
                                     showTimeSelect
@@ -85,7 +66,7 @@ export default function ActivityEdit(props) {
                         <Form.Row>
                             <Form.Group as={Col} controlId="description">
                                 <Form.Label>Comment</Form.Label>
-                                <Form.Control as='textarea' plaintext name='description' onChange={handleChange} value={values.description}/>
+                                <Form.Control as='textarea' name='description' onChange={handleChange} value={values.description}/>
                             </Form.Group>
                         </Form.Row>
                         <Button variant="primary" type="submit">
