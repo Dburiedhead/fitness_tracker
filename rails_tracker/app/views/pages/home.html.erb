@@ -1,7 +1,15 @@
-<header class="masthead">
-    <div class="container">
-        <div class="masthead-subheading">Welcome To Moove & Groove!</div>
-        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Login our Sign up</a>
+<head>
+    <%= stylesheet_pack_tag 'home' %>
+</head>
+<header>
+    <div class="home">
+        <div class="heading">
+            <h1>Moove & Groove.</h1>
+        </div>
+        <div class="sub-heading">
+            <h2 class="masthead-heading text">Track your workouts <br/>Stay healthy</h2>
+            <br/>
+            <%= link_to('Login or Sign up', new_user_session_path, class: "btn btn-primary btn-lg text js-scroll-trigger") %>
+        </div>
     </div>
 </header>

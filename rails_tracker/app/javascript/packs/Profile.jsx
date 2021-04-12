@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Row, Col, Button, Container, Form } from 'react-bootstrap';
-import { Formik } from 'formik';
-import axios from 'axios';
-import Cookies from 'js-cookie'
+import React from 'react';
 import ReactDOM from 'react-dom'
+import { Row, Col, Button, Container, Form } from 'react-bootstrap';
+import * as Icon from 'react-feather';
+import Cookies from 'js-cookie'
 
 export default function Profile() {
     return (
@@ -12,24 +11,27 @@ export default function Profile() {
                 <h3>User information</h3>
             </Row>
             <Row>
-                <Form noValidate>
-                    <Form.Group as={Row}>
-                        <Form.Label column md="6">Your email</Form.Label>
-                        <Col md="6">
-                            <Form.Control
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                value={Cookies.get('useremail')}
-                                readOnly
-                                plaintext
-                            />
-                        </Col>
-                    </Form.Group>
-                </Form>
-            </Row>
-            <Row>
-                <a href="/users/edit">Edit your Profile</a>
+                <Col md={6}>
+                    <Form noValidate>
+                        <Form.Group as={Row}>
+                            <Form.Label column>Your email</Form.Label>
+                            <Col style={{ display: "flex", flexDirection: "row" }}>
+                                <Form.Control
+                                    type="email"
+                                    name="email"
+                                    value={Cookies.get('useremail')}
+                                    readOnly
+                                    plaintext
+                                />
+                                <span style={{ paddingTop: "calc(.375rem + 1px)" }}>
+                                    <a href="/users/edit"><Icon.Edit color="#4c4c4c" /></a>
+                                </span>
+                            </Col>
+                            {/* <Col md={6} >
+                            </Col> */}
+                        </Form.Group>
+                    </Form>
+                </Col>
             </Row>
         </Container>
     )

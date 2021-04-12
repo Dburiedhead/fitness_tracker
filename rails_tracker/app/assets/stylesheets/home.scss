@@ -14,27 +14,41 @@
  *= require_self
  */
 
-.session-new {
-  background-image: url(/assets/crossfit_1920.jpg);
+ @import "bootstrap";
+
+//  html,
+// body {
+//   height: 100%;
+// }
+
+// body {
+//   display: flex;
+//   align-items: center;
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   background-color: #f5f5f5;
+// }
+
+.home .heading {
+  color: #FFFFFF;
+}
+
+.home {
+  background-image: url(/assets/lifting_1920);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center ;
   height: 100vh;
   overflow: hidden;
-}
-
-.session-new .row {
   padding: 3rem;
+  text-align: center;
 }
 
-.session-new .form-signin {
-  background: #ffffffce;
-  border-radius: .3rem;
-  padding: 1rem;
+.home h2 {
+  // text-align: justify;
+  color: #ffffffbb;
 }
 
-.devise-shared-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.home .sub-heading {
+  margin: 3rem
 }
