@@ -1,9 +1,10 @@
 import React, { Component, useState } from 'react';
+import * as Icon from 'react-feather';
 import axios from 'axios';
 import ActivityShow from './activity_show'
 import ActivityAdd from './activity_add'
 import Counter from './activity_count'
-import { Row, Col, Button, Modal, Container, Card, Image, Accordion, Badge } from 'react-bootstrap'
+import { Row, Col, Button, Modal, Container, Card, Accordion } from 'react-bootstrap'
 
 function AddActivityModal() {
   const [show, setShow] = useState(false);
@@ -13,7 +14,7 @@ function AddActivityModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>Add an activity</Button>
+      <Button variant="primary" onClick={handleShow}><Icon.PlusSquare style={{ marginRight: "0.5rem "}}/>New activity</Button>
 
       <Modal
         show={show}
@@ -63,7 +64,7 @@ class ActivityIndex extends Component {
         </Row>
         <Row>
           <Accordion defaultActiveKey="0" style={{ width: '80vw', margin: '1em auto' }}>
-            {this.state.activities.map(({ name, image }, index) =>
+            {this.state.activities.map(({ name }, index) =>
               <Card key={index} style={{ margin: '1rem 0' }}>
                 <Accordion.Toggle
                   as={Card.Header}

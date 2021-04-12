@@ -8,7 +8,9 @@ export default function Profile() {
     return (
         <Container style={{ paddingTop: '2%', background: 'rgb(255, 255, 255)' }}>
             <Row>
-                <h3>User information</h3>
+                <Col md={10}>
+                    <h3>User information</h3>
+                </Col>
             </Row>
             <Row>
                 <Col md={6}>

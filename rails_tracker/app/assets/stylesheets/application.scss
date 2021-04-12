@@ -14,8 +14,18 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
 
+body, p, span {
+    // font-family: 'Istok Web', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', cursive;
+}
 nav#app-navbar.navbar.navbar-expand-lg.navbar-dark.mb-5, nav#app-footer.navbar.navbar-expand-lg.navbar-dark.mb-5 {
     margin-bottom: 0 !important;
     background-color: #000000f2;
@@ -75,4 +85,24 @@ footer h5 {
 .list-group-item.footer-link:hover {
     color: rgba(255, 255, 255, 0.822);
     text-decoration: none;
+}
+
+.btn.btn-primary {
+    background-color: #fff;
+    color: #000000f2;
+    border: 1.5px solid #000000f2;
+}
+
+.btn.btn-primary:hover, .btn.btn-primary:active {
+    background-color: #fff;
+    color: #000000f2;
+    border: 1.5px solid #000000f2;
+
+}
+
+.btn.btn-primary:focus, .btn-primary.focus {
+    background-color: #000000f2 !important;
+    color: #fff !important;
+    border: 1.5px solid #fff !important;
+    box-shadow: 0 0 0 .2rem rgb(0, 0, 0) !important;
 }
