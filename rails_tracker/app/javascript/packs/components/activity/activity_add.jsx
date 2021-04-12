@@ -30,7 +30,6 @@ export default function ActivityAdd() {
                 onSubmit={setAxiosHeaders(), (values) =>
                     axios.post('/api/v1/user_activities', values)
                     .then( response => {if (response.status == 201){window.location.reload()}} )
-                    // .then(values => console.log('new activity submitted', values))
                     .catch(err => console.log(err))
                 }
                 initialValues={{

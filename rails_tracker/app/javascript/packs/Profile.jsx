@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { Row, Col, Button, Container, Form } from 'react-bootstrap';
+import { Row, Col, Container, Form } from 'react-bootstrap';
 import * as Icon from 'react-feather';
 import Cookies from 'js-cookie'
 
@@ -29,8 +29,6 @@ export default function Profile() {
                                     <a href="/users/edit"><Icon.Edit color="#4c4c4c" /></a>
                                 </span>
                             </Col>
-                            {/* <Col md={6} >
-                            </Col> */}
                         </Form.Group>
                     </Form>
                 </Col>

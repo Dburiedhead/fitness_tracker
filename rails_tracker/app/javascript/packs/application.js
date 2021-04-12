@@ -22,7 +22,6 @@ require ('bootstrap')
 require ('popper.js')
 require ('jquery')
 
-// import 'bootstrap/dist/css/bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-bootstrap'
 import 'jquery'

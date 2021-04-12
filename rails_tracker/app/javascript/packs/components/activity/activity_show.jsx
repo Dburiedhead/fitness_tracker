@@ -65,7 +65,6 @@ class ActivityShow extends React.Component {
 
         <thead>
           <tr>
-            {/* <th>#</th> */}
             <th>Date</th>
             <th>Activity</th>
             <th>Duration</th>
@@ -77,9 +76,6 @@ class ActivityShow extends React.Component {
         <tbody>
           {this.state.user_activities.filter(act => act.activity_id==this.props.activityIndex).map(({ id, description, duration, date }, index) =>
             <tr key={index}>
-              {/* <td>
-                {id}
-              </td> */}
               <td>
                 {date}
               </td>
