@@ -15,3 +15,5 @@ document.addEventListener('turbolinks:load', () => {
     app
   )
 })
+
+export default App
